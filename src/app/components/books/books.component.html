@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="heading-main">
+    Test task
+  </div>
+  <table class="responstable" cellpadding="0" cellspacing="0">
+    <tr>
+      <th data-th="Driver details"><span>Title</span></th>
+      <th>Author</th>
+      <th>Website</th>
+      <th>Details</th>
+    </tr>
+    <tr *ngFor="let book of books | paginate: { itemsPerPage: 5, currentPage: page }  | orderBy: 'title'">
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.website}}</td>
+      <td><button (click)="goToBookDetail(book.id)">Show</button></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <pagination-controls (pageChange)="page = $event" [id]="id" previousLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+          screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page"></pagination-controls>
+      </td>
+    </tr>
+  </table>
+</div>

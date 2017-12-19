@@ -1,0 +1,88 @@
+<mat-dialog-content>
+  <form novalidate [formGroup]="editForm">
+    <div class="heading-main">
+      Edit Detail
+    </div>
+    <table class="responstable tablepopup" cellpadding="0" cellspacing="0">
+      <tr>
+        <td data-th="Driver details">ISBN<span></span></td>
+        <td><input type="text" class="form-control" formControlName="isbn" required>
+          <div class="errmsg" *ngIf="editForm.hasError('required','isbn')">
+            ISBN is required.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span>Title</span></td>
+        <td><input type="text" class="form-control" formControlName="title" required>
+          <div class="errmsg" *ngIf="editForm.hasError('required','title')">
+            Title is required.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span>Subtitle</span></td>
+        <td><input type="text" class="form-control" formControlName="subtitle" required>
+          <div class="errmsg" *ngIf="editForm.hasError('required','subtitle')">
+            Subtitle is required.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span>Author</span></td>
+        <td><input type="text" class="form-control" formControlName="author" required>
+          <div class="errmsg" *ngIf="editForm.hasError('required','author')">
+            Author is required.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span>Published</span></td>
+        <td><input type="text" class="form-control" formControlName="published" required>
+          <div class="errmsg" *ngIf="editForm.hasError('required','published')">
+            Published date is required.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span>Publisher</span></td>
+        <td><input type="text" class="form-control" formControlName="publisher" required>
+          <div class="errmsg" *ngIf="editForm.hasError('required','publisher')">
+            Publisher is required.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span>Pages</span></td>
+        <td><input type="text" class="form-control" formControlName="pages" required>
+          <div class="errmsg" *ngIf="editForm.hasError('required','pages')">
+            Pages is required.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span>Description</span></td>
+        <td><textarea type="text" class="form-control" formControlName="description" required>
+          </textarea>
+          <div class="errmsg" *ngIf="editForm.hasError('required','description')">
+            Description is required.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span>Website</span></td>
+        <td><input type="text" class="form-control" formControlName="website" required>
+          <div class="errmsg" *ngIf="editForm.hasError('required','website')">
+            Website is required.
+          </div>
+        </td>
+      </tr>
+      <tr>
+      </tr>
+    </table>
+    <mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="editForm.value" class="edit-btn right">Save</button>
+      <button mat-button mat-dialog-close class="edit-btn">Cancel</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>
